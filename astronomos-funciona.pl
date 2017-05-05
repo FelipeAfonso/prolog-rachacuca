@@ -1,4 +1,4 @@
-% Cria a estrutura que será utilizada para a resolução, apenas uma convenção para não precisar digitar tudo manualmente
+% Cria a lista com as 5 estruturas que serão utilizadas para a resolução, apenas uma convenção para não precisar digitar tudo manualmente
 pessoas(0, []) :- !.
 pessoas(N, [(_Camisa, _Nome, _Idade, _Constelacao, _Altura, _Esporte)|Y]) :- N1 is N-1, pessoas(N1, Y).
 
@@ -6,7 +6,7 @@ pessoas(N, [(_Camisa, _Nome, _Idade, _Constelacao, _Altura, _Esporte)|Y]) :- N1 
 % ------- A partir daqui ocorrem as insercoes de dados e dicas ---------
 % ----------------------------------------------------------------------
 
-% Dados que por nao aparecerem na nomenclatura das dicas
+% Dados que nao aparecem na nomenclatura das dicas
 dados_nao_mencionados_azul([(azul,_,_,_,_,_)|_]).
 dados_nao_mencionados_azul([_|Y]) :- dados_nao_mencionados_azul(Y).
 
@@ -18,12 +18,10 @@ dados_nao_mencionados_altura([_|Y]) :- dados_nao_mencionados_altura(Y).
 
 % Na segunda posicao esta o astronomo com a camisa Vermelha.
 dica1([(_,_,_,_,_,_),(vermelho,_,_,_,_,_),(_,_,_,_,_,_),(_,_,_,_,_,_),(_,_,_,_,_,_)|_]).
-dica1([_|Y]) :- dica1(Y).
 
 % O homem de 29 anos esta em uma das pontas.
 dica2([(_,_,29,_,_,_),(_,_,_,_,_,_),(_,_,_,_,_,_),(_,_,_,_,_,_),(_,_,_,_,_,_)|_]).
 dica2([(_,_,_,_,_,_),(_,_,_,_,_,_),(_,_,_,_,_,_),(_,_,_,_,_,_),(_,_,29,_,_,_)|_]).
-dica2([_|Y]) :- dica2(Y).
 
 % O astronomo de Vermelho esta em algum lugar entre quem gosta de Natacao e quem tem 35 anos, nessa ordem.
 dica3([(_,_,_,_,_,natacao),(vermelho,_,_,_,_,_),(_,_,35,_,_,_)|_]).
@@ -83,7 +81,6 @@ dica12([_|Y]) :- dica12(Y).
 % Alan esta em uma das pontas.
 dica13([(_,alan,_,_,_,_),(_,_,_,_,_,_),(_,_,_,_,_,_),(_,_,_,_,_,_),(_,_,_,_,_,_)|_]).
 dica13([(_,_,_,_,_,_),(_,_,_,_,_,_),(_,_,_,_,_,_),(_,_,_,_,_,_),(_,alan,_,_,_,_)|_]).
-dica13([_|Y]) :- dica13(Y).
 
 % O astronomo que esta observando a constelacao de Escorpiao esta ao lado do astronomo de 1,72 m.
 dica14([(_,_,_,escorpiao,_,_),(_,_,_,_,1.72,_)|_]).
@@ -123,7 +120,7 @@ dica20([_|Y]) :- dica20(Y).
 dica21([(_,_,_,aries,1.66,_)|_]).
 dica21([_|Y]) :- dica21(Y).
 
-% Logica que engloba todos os enunciados e exibe eles na tela
+% Logica que engloba todos os enunciados de dicas e exibe eles na tela
 resolver(Pessoas) :-
     pessoas(5, Pessoas),
     dados_nao_mencionados_azul(Pessoas),
