@@ -1,0 +1,33 @@
+﻿Grupo: Felipe Munhoz Afonso, Gabriel Henrique Faustini Gomes, 
+       Gabriela Martins de Jesus, Willian Garcias de Assunção.
+
+
+
+Problema abordado: O problema que foi abordado foi o dos Astrônomos Amadores, 
+em que temos 
+cinco astrônomos amadores que estão lado a lado observando o céu. 
+O objetivo colocado pelo problema é descobrir qual constelação cada um está 
+observando. O problema pode ser encontrado em 
+https://rachacuca.com.br/logica/problemas/astronomos-amadores/
+
+Estratégia da solução: A estratégia foi implementar um molde de 5 pessoas, que 
+seria uma lista com 5 estruturas, sendo que cada estrutura representa uma 
+pessoa(astronomo). A lógica principal do programa faz a chamada dos predicados 
+de dicas passando a lista com as pessoas. Dentro dos predicados de dicas fazemos 
+a lógica implementando o valor do atributo de dica em seu devido lugar, não se 
+importando com os outros valores que não são referentes a dica, que são 
+referenciados pelas variaveis anonimas.
+
+ É importante ressaltar o fato de que
+apenas o conjunto de dicas não fornece todos os dados necessários para sua 
+resolução, portanto, estes dados são listados no começo da resolução.
+
+Como utilizar o programa:
+
+ 
+-> Fazer a leitura através de [astronomos].
+
+
+ -> Chamar o método da lógica principal, passando a variavel L, que será a 
+lista com os atributos dos astrônomos resolvidos: "resolver(L)".
+
